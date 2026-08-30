@@ -124,6 +124,11 @@ button { font: inherit; color: inherit; }
 
 ::selection { background: var(--brand); color: #FFF; }
 
+/* The hidden attribute must win over component display rules. Without this,
+   .field__error (display:flex) rendered an empty red badge beside every input
+   from first paint, and the same trap applies to any future [hidden] toggle. */
+[hidden] { display: none !important; }
+
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
@@ -1591,7 +1596,144 @@ button { font: inherit; color: inherit; }
 }
 
 /* --------------------------------------------------------------------------
-   19. ACCESSIBILITY / MOTION / PRINT
+   19. REFINEMENTS — scroll progress, reveals, micro-interactions
+   -------------------------------------------------------------------------- */
+
+/* --- reading progress line under the header.
+   Pure CSS via a scroll-driven animation; hidden entirely where the feature
+   is missing, so nothing needs a JS fallback. --- */
+.header__progress { display: none; }
+@supports (animation-timeline: scroll(root)) {
+  .header__progress {
+    display: block;
+    position: absolute;
+    inset-inline: 0;
+    bottom: -1px;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 62%, #D9B87C 100%);
+    animation: progressGrow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes progressGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* --- scroll reveal.
+   The hidden base state is scoped to .reveal-ready, a class main.js only adds
+   when IntersectionObserver exists and motion is not reduced. Without JS, or
+   with reduced motion, every element stays visible. --- */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+}
+.reveal-ready [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* --- gold flourish under section titles --- */
+.section__title::after {
+  content: '';
+  display: block;
+  width: 58px; height: 3px;
+  margin-top: var(--s-4);
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(176, 133, 74, 0) 100%);
+}
+.section__head--center .section__title::after {
+  margin-inline: auto;
+  background: linear-gradient(90deg, rgba(176, 133, 74, 0) 0%, var(--accent) 50%, rgba(176, 133, 74, 0) 100%);
+}
+
+/* --- hero depth: fine grain and one slow-drifting gold bloom --- */
+.hero { isolation: isolate; }
+.hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -14%; right: -8%;
+  width: 46vw; height: 46vw;
+  max-width: 620px; max-height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176, 133, 74, .17) 0%, rgba(176, 133, 74, 0) 68%);
+  pointer-events: none;
+  animation: heroBloom 19s var(--ease) infinite alternate;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23g)' opacity='.05'/></svg>");
+}
+@keyframes heroBloom {
+  from { transform: none; opacity: .75; }
+  to   { transform: translate3d(-4%, 5%, 0) scale(1.09); opacity: 1; }
+}
+
+/* --- inventory cards: media zoom, scrim for badge legibility, deeper lift --- */
+.card__media { overflow: hidden; }
+.card__media img { transition: transform .55s var(--ease); }
+.card:hover .card__media img { transform: scale(1.05); }
+.card__media::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 46%;
+  background: linear-gradient(180deg, rgba(20, 26, 23, 0) 0%, rgba(20, 26, 23, .2) 100%);
+  pointer-events: none;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(176, 133, 74, .5);
+  box-shadow: 0 6px 16px rgba(20, 26, 23, .07), 0 26px 56px -22px rgba(20, 26, 23, .24);
+}
+.card__title { transition: color .18s var(--ease); }
+.card:hover .card__title { color: var(--brand-600); }
+
+/* --- process steps --- */
+.step { transition: transform .2s var(--ease), box-shadow .22s var(--ease), border-color .2s var(--ease); }
+.step:hover { transform: translateY(-4px); box-shadow: var(--sh-3); border-color: var(--line-2); }
+.step__num { transition: transform .26s var(--ease); }
+.step:hover .step__num { transform: translateY(-3px) rotate(-5deg); }
+
+/* --- area panels: gold rail grows on hover --- */
+.area { position: relative; overflow: hidden; }
+.area::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-600) 100%);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform .3s var(--ease);
+}
+.area:hover::before { transform: scaleY(1); }
+
+/* --- buttons: one-pass sheen on the solid variants --- */
+.btn { overflow: hidden; }
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: -35%;
+  width: 26%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.btn--primary:hover::after { opacity: 1; animation: btnSheen .8s var(--ease); }
+@keyframes btnSheen {
+  from { left: -35%; }
+  to   { left: 118%; }
+}
+
+/* --------------------------------------------------------------------------
+   20. ACCESSIBILITY / MOTION / PRINT
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

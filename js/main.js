@@ -807,6 +807,87 @@
   }
 
   /* ------------------------------------------------------------------------
+     9b. SCROLL REVEAL
+     ------------------------------------------------------------------------
+     Elements fade up as they enter the viewport. The hidden start state lives
+     behind .reveal-ready, which is only set when IntersectionObserver exists
+     and the visitor has not asked for reduced motion — so the page can never
+     end up with permanently invisible content.
+     ------------------------------------------------------------------------ */
+  var REVEAL_GROUPS = [
+    '.proof__item',
+    '.section__head',
+    '.cards > *',
+    '.areas__panels > .area',
+    '.areas__map',
+    '.steps > *',
+    '.why__portrait',
+    '.why__body',
+    '.band__inner > *',
+    '.faq__item',
+    '.form-card:not(.form-card--hero)',
+    '.contact-card'
+  ];
+
+  function initReveal() {
+    if (!('IntersectionObserver' in window) || prefersReducedMotion()) return;
+
+    var groups = REVEAL_GROUPS
+      .map(function (sel) { return $$(sel); })
+      .filter(function (list) { return list.length; });
+    if (!groups.length) return;
+
+    document.documentElement.classList.add('reveal-ready');
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+
+    /* Safety net. The invariant is simple: nothing sitting in the viewport may
+       still be hidden. If that is ever violated the observer is not doing its
+       job, so drop the effect and show plain content — a missed animation is a
+       cosmetic loss, an invisible page is not. Checked once after boot and
+       once after the first scroll, since the fold may start above every
+       reveal target. */
+    function auditReveal() {
+      if (!document.documentElement.classList.contains('reveal-ready')) return;
+      var stranded = $$('[data-reveal]:not(.is-in)').filter(function (el) {
+        var r = el.getBoundingClientRect();
+        return r.bottom > 0 && r.top < window.innerHeight * 0.9;
+      });
+      if (!stranded.length) return;
+      io.disconnect();
+      document.documentElement.classList.remove('reveal-ready');
+    }
+
+    window.setTimeout(auditReveal, 1800);
+
+    /* keep auditing while scrolling, throttled, until the effect is either
+       finished or switched off */
+    var auditTimer = null;
+    window.addEventListener('scroll', function () {
+      if (auditTimer) return;
+      auditTimer = window.setTimeout(function () {
+        auditTimer = null;
+        auditReveal();
+      }, 700);
+    }, { passive: true });
+
+    groups.forEach(function (list) {
+      list.forEach(function (el, i) {
+        el.setAttribute('data-reveal', '');
+        /* cap the stagger so long lists never feel slow */
+        if (i > 0) el.style.transitionDelay = Math.min(i, 5) * 70 + 'ms';
+        io.observe(el);
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      10. CHROME
      ------------------------------------------------------------------------ */
   function measureHeader() {
@@ -892,6 +973,7 @@
     initNav();
     initFaq();
     initChrome();
+    initReveal();
 
     track('page_view', {
       page_path: window.location.pathname,
