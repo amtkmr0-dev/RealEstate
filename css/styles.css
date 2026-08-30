@@ -1055,6 +1055,9 @@ button { font: inherit; color: inherit; }
   max-width: 420px;
   aspect-ratio: 5 / 6;
   object-fit: cover;
+  /* photo is 3:4, so cover trims ~10% of its height. Bias the crop upward to
+     keep headroom above the face and lose the desk edge instead. */
+  object-position: 50% 20%;
   border-radius: var(--r-2xl);
   border: 1px solid var(--line);
   box-shadow: var(--sh-3);
