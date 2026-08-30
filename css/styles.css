@@ -333,11 +333,21 @@ button { font: inherit; color: inherit; }
   position: sticky;
   top: 0;
   z-index: 70;
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow .2s var(--ease);
+}
+/* The frosted layer sits on a pseudo-element, not on .header itself.
+   backdrop-filter (like filter) makes an element the containing block for its
+   fixed-position descendants, which clipped the mobile nav panel to the 68px
+   header instead of letting it fill the viewport. */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(251, 248, 243, .88);
   backdrop-filter: saturate(150%) blur(12px);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
-  border-bottom: 1px solid var(--line);
-  transition: box-shadow .2s var(--ease);
 }
 .header.is-stuck { box-shadow: var(--sh-2); }
 .header__inner {
@@ -421,17 +431,25 @@ button { font: inherit; color: inherit; }
 .site-nav__list a:hover { background: var(--brand-100); color: var(--brand); }
 .site-nav__cta { display: flex; align-items: center; gap: var(--s-2); }
 .nav-only-mobile { display: none; }
+/* extra rows that only earn their place in the mobile panel */
+.nav-row-mobile { display: none; }
 
 .nav-scrim {
   position: fixed;
   inset: 0;
   z-index: 65;
-  background: rgba(14, 26, 21, .5);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(11, 22, 18, .55);
+  backdrop-filter: blur(3px) saturate(120%);
+  -webkit-backdrop-filter: blur(3px) saturate(120%);
 }
+/* the scrim is toggled with [hidden], so fade it in with an animation rather
+   than a transition — a transition would not run on display:none -> block */
+.nav-open .nav-scrim { animation: scrimIn .28s var(--ease) both; }
+@keyframes scrimIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* mobile nav panel */
+/* mobile nav panel: fixed head, scrolling link list, pinned contact footer.
+   Only the list scrolls, so the WhatsApp and call buttons stay reachable no
+   matter how short the viewport is. */
 @media (max-width: 1023px) {
   .site-nav {
     position: fixed;
@@ -439,30 +457,156 @@ button { font: inherit; color: inherit; }
     z-index: 80;
     display: flex;
     flex-direction: column;
-    gap: var(--s-5);
-    width: min(360px, 88vw);
-    padding: calc(var(--s-8) + env(safe-area-inset-top)) var(--s-6) var(--s-8);
-    background: var(--surface-2);
+    gap: 0;
+    width: min(370px, 90vw);
+    max-width: 100vw;
+    padding: 0;
+    background: linear-gradient(180deg, #FFFDFA 0%, var(--surface-2) 45%, #F4EFE6 100%);
     border-inline-start: 1px solid var(--line);
-    box-shadow: var(--sh-4);
-    overflow-y: auto;
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+    box-shadow: -26px 0 64px -28px rgba(14, 26, 21, .4), var(--sh-4);
+    overflow: hidden;
     transform: translateX(102%);
     visibility: hidden;
-    transition: transform .28s var(--ease), visibility .28s var(--ease);
+    transition: transform .32s var(--ease), visibility .32s var(--ease);
   }
   .nav-open .site-nav { transform: translateX(0); visibility: visible; }
-  .site-nav__list { flex-direction: column; align-items: stretch; gap: var(--s-1); }
-  .site-nav__list a {
-    min-height: 52px;
-    padding-inline: var(--s-4);
-    border-bottom: 1px solid var(--line);
-    border-radius: var(--r-sm);
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
+
+  /* gold hairline down the leading edge */
+  .site-nav::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(176, 133, 74, 0) 0%, var(--accent) 22%, var(--accent) 78%, rgba(176, 133, 74, 0) 100%);
+    opacity: .55;
   }
-  .site-nav__cta { flex-direction: column; align-items: stretch; gap: var(--s-3); }
-  .site-nav__cta .btn { width: 100%; min-height: 50px; }
+
+  .site-nav__head.nav-only-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    flex: 0 0 auto;
+    padding: calc(var(--s-4) + env(safe-area-inset-top)) var(--s-5) var(--s-4);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(18, 58, 44, .055), rgba(18, 58, 44, 0));
+  }
+  .site-nav__eyebrow {
+    color: var(--muted-2);
+    font-size: .6875rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .site-nav__close {
+    display: grid;
+    place-items: center;
+    width: 42px; height: 42px;
+    border: 1.5px solid var(--line-2);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--brand);
+    cursor: pointer;
+    transition: border-color .18s var(--ease), background-color .18s var(--ease), transform .18s var(--ease);
+  }
+  .site-nav__close .ico { width: 18px; height: 18px; }
+  .site-nav__close:hover { border-color: var(--brand); background: var(--brand-100); }
+  .site-nav__close:active { transform: scale(.94); }
+
+  .site-nav__list {
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: var(--s-4);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-row-mobile { display: block; }
+  .site-nav__list a {
+    position: relative;
+    justify-content: space-between;
+    min-height: 54px;
+    padding-inline: var(--s-4);
+    border-bottom: 0;
+    border-radius: var(--r-md);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: -.005em;
+  }
+  /* gold rail that grows in on touch / hover */
+  .site-nav__list a::before {
+    content: '';
+    position: absolute;
+    inset-block: 13px;
+    inset-inline-start: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform .2s var(--ease);
+  }
+  /* chevron, drawn with borders so it needs no extra markup */
+  .site-nav__list a::after {
+    content: '';
+    width: 7px; height: 7px;
+    border-top: 2px solid var(--muted-2);
+    border-right: 2px solid var(--muted-2);
+    border-radius: 1px;
+    transform: rotate(45deg);
+    transition: transform .2s var(--ease), border-color .2s var(--ease);
+  }
+  .site-nav__list a:hover,
+  .site-nav__list a:active,
+  .site-nav__list a:focus-visible { background: var(--brand-100); color: var(--brand); }
+  .site-nav__list a:hover::before,
+  .site-nav__list a:active::before { transform: scaleY(1); }
+  .site-nav__list a:hover::after,
+  .site-nav__list a:active::after {
+    border-color: var(--accent-600);
+    transform: rotate(45deg) translate(2px, -2px);
+  }
+
+  /* rows fade in one after another as the panel slides open */
+  .nav-open .site-nav__list li { animation: navRowIn .34s var(--ease) both; }
+  .nav-open .site-nav__list li:nth-child(1) { animation-delay: .07s; }
+  .nav-open .site-nav__list li:nth-child(2) { animation-delay: .11s; }
+  .nav-open .site-nav__list li:nth-child(3) { animation-delay: .15s; }
+  .nav-open .site-nav__list li:nth-child(4) { animation-delay: .19s; }
+  .nav-open .site-nav__list li:nth-child(5) { animation-delay: .23s; }
+  .nav-open .site-nav__list li:nth-child(6) { animation-delay: .27s; }
+  .nav-open .site-nav__list li:nth-child(7) { animation-delay: .31s; }
+  @keyframes navRowIn {
+    from { opacity: 0; transform: translateX(16px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .site-nav__cta {
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--s-3);
+    padding: var(--s-5) var(--s-5) calc(var(--s-5) + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255, 253, 250, .6), rgba(244, 239, 230, .92));
+  }
+  .site-nav__cta .btn { width: 100%; min-height: 52px; }
+  .site-nav__meta.nav-only-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--muted-2);
+    font-size: .75rem;
+  }
+  .site-nav__meta .ico { width: 14px; height: 14px; color: var(--accent); }
+
   .nav-only-mobile { display: inline-flex; }
   /* scroll lock while the panel is open */
   .nav-open, .nav-open body { overflow: hidden; touch-action: none; }
@@ -1453,6 +1597,7 @@ button { font: inherit; color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: .001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
     scroll-behavior: auto !important;

@@ -676,7 +676,7 @@
      8. MOBILE NAVIGATION
      ------------------------------------------------------------------------ */
   var nav = {
-    toggle: null, panel: null, scrim: null, lastFocus: null, open: false
+    toggle: null, panel: null, scrim: null, close: null, lastFocus: null, open: false
   };
 
   function navIsMobile() {
@@ -746,6 +746,13 @@
     nav.toggle.addEventListener('click', function () {
       if (nav.open) closeNav(true); else openNav();
     });
+
+    /* The panel covers the header's toggle button on mobile, so the panel
+       carries its own close control. */
+    nav.close = $('#navClose');
+    if (nav.close) {
+      nav.close.addEventListener('click', function () { closeNav(true); });
+    }
 
     if (nav.scrim) {
       nav.scrim.addEventListener('click', function () { closeNav(true); });

@@ -237,6 +237,9 @@
     <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7.5v6M12 16.4v.2"/>
   </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6.4 6.4l11.2 11.2M17.6 6.4 6.4 17.6"/>
+  </symbol>
 </svg>
 
 <!-- ============================ 1. ANNOUNCEMENT BAR ============================ -->
@@ -279,13 +282,23 @@
     </button>
 
     <nav class="site-nav" id="siteMenu" aria-label="Main navigation">
+      <div class="site-nav__head nav-only-mobile">
+        <span class="site-nav__eyebrow">Menu</span>
+        <button class="site-nav__close" type="button" id="navClose" aria-label="Close navigation menu">
+          <svg class="ico" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </div>
+
       <ul class="site-nav__list">
         <li><a href="#inventory">Inventory</a></li>
         <li><a href="#areas">Areas</a></li>
+        <li class="nav-row-mobile"><a href="#how">How it works</a></li>
         <li><a href="#why">Why Deepika</a></li>
+        <li class="nav-row-mobile"><a href="#faq">FAQ</a></li>
         <li><a href="#visit">Site visit</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
       <div class="site-nav__cta">
         <a class="btn btn--primary btn--sm" href="https://wa.me/919648410410" data-wa
            data-wa-msg="Namaste Deepika ji! Main Lucknow mein plot / villa / farmhouse ke options dekhna chahta/chahti hoon. Kripya guide kijiye."
@@ -295,6 +308,10 @@
         <a class="btn btn--outline btn--sm nav-only-mobile" href="tel:+919648410410" data-call>
           <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call 96484 10410
         </a>
+        <p class="site-nav__meta nav-only-mobile">
+          <svg class="ico" aria-hidden="true"><use href="#i-clock"></use></svg>
+          10:00&#8211;19:00 IST · WhatsApp anytime
+        </p>
       </div>
     </nav>
   </div>
