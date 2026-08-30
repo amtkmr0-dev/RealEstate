@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img"
+     aria-label="Illustration of a low farmhouse with a pitched roof and verandah, set behind a mango orchard, boundary wall and entrance gate on an open lawn">
+  <title>Farmhouse with verandah behind a mango orchard and boundary gate</title>
+  <defs>
+    <linearGradient id="fh-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAD3AC"/>
+      <stop offset=".5" stop-color="#F7EEDF"/>
+      <stop offset="1" stop-color="#EAEEE5"/>
+    </linearGradient>
+    <linearGradient id="fh-wall" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#FEFBF5"/><stop offset="1" stop-color="#E9DCC5"/>
+    </linearGradient>
+    <linearGradient id="fh-roof" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9A6540"/><stop offset=".6" stop-color="#7B4B2C"/><stop offset="1" stop-color="#5E3720"/>
+    </linearGradient>
+    <linearGradient id="fh-field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD9C2"/><stop offset="1" stop-color="#A9BFA1"/>
+    </linearGradient>
+    <linearGradient id="fh-path" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4D9C4"/><stop offset="1" stop-color="#CDBEA3"/>
+    </linearGradient>
+    <filter id="fh-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter>
+    <radialGradient id="fh-vig" cx=".5" cy=".45" r=".76">
+      <stop offset=".58" stop-color="#3A2E18" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A2E18" stop-opacity=".16"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#fh-sky)"/>
+  <circle cx="646" cy="92" r="42" fill="#FFE9BC" opacity=".8"/>
+  <g fill="#FFFFFF" opacity=".42">
+    <ellipse cx="214" cy="84" rx="134" ry="16"/>
+    <ellipse cx="500" cy="124" rx="104" ry="12"/>
+  </g>
+
+  <!-- far tree band -->
+  <path d="M0 286c60-16 92 6 138-6s72-20 118-8 68 20 114 4 82-16 128-2 76 18 122 2l180-8v34H0z"
+        fill="#8FA989" opacity=".55"/>
+
+  <rect x="0" y="298" width="800" height="262" fill="url(#fh-field)"/>
+  <path d="M0 298h800v8H0z" fill="#8FA989" opacity=".6"/>
+
+  <!-- orchard rows behind house -->
+  <g>
+    <g><rect x="56" y="248" width="7" height="54" fill="#7A6248"/><circle cx="59" cy="238" r="32" fill="#3D6B4F"/></g>
+    <g><rect x="126" y="256" width="6" height="46" fill="#7A6248"/><circle cx="129" cy="246" r="27" fill="#457458"/></g>
+    <g><rect x="678" y="248" width="7" height="54" fill="#7A6248"/><circle cx="681" cy="238" r="32" fill="#3D6B4F"/></g>
+    <g><rect x="742" y="256" width="6" height="46" fill="#7A6248"/><circle cx="745" cy="246" r="27" fill="#457458"/></g>
+  </g>
+
+  <!-- farmhouse -->
+  <g>
+    <ellipse cx="400" cy="386" rx="200" ry="16" fill="#7F9479" opacity=".45" filter="url(#fh-soft)"/>
+    <path d="M228 258 400 172l172 86z" fill="url(#fh-roof)"/>
+    <path d="M228 258h344v13H228z" fill="#523018"/>
+    <g stroke="#4A2C15" stroke-width="2" opacity=".4">
+      <path d="M288 228l-30 30M340 202l-54 56M400 176l-80 82M460 202l-72 56M520 230l-46 28"/>
+    </g>
+    <path d="M400 176 572 258h-40L400 192z" fill="#FFFFFF" opacity=".12"/>
+
+    <rect x="250" y="271" width="300" height="112" fill="url(#fh-wall)"/>
+    <rect x="250" y="271" width="300" height="9" fill="#B0854A" opacity=".8"/>
+    <g fill="#FAF3E5">
+      <rect x="256" y="282" width="13" height="101" rx="4"/>
+      <rect x="330" y="282" width="13" height="101" rx="4"/>
+      <rect x="457" y="282" width="13" height="101" rx="4"/>
+      <rect x="531" y="282" width="13" height="101" rx="4"/>
+    </g>
+    <rect x="282" y="300" width="40" height="68" rx="3" fill="#0F3628"/>
+    <rect x="352" y="300" width="88" height="68" rx="3" fill="#F6C979"/>
+    <rect x="392" y="300" width="9" height="68" fill="#0F3628" opacity=".35"/>
+    <rect x="478" y="300" width="40" height="68" rx="3" fill="#0F3628"/>
+    <rect x="348" y="294" width="96" height="4" rx="2" fill="#B0854A"/>
+    <rect x="242" y="378" width="316" height="14" rx="3" fill="#DCCBAE"/>
+  </g>
+
+  <!-- path from gate to verandah -->
+  <path d="M362 392h76l84 168H278z" fill="url(#fh-path)"/>
+  <g stroke="#F6F0E2" stroke-width="4" opacity=".55">
+    <path d="M400 398v158"/>
+  </g>
+
+  <!-- boundary wall across foreground with gate on the path -->
+  <g>
+    <rect x="0" y="444" width="320" height="30" fill="#E4D8C1"/>
+    <rect x="0" y="437" width="330" height="10" rx="4" fill="#F4EBDA"/>
+    <rect x="480" y="444" width="320" height="30" fill="#E4D8C1"/>
+    <rect x="470" y="437" width="330" height="10" rx="4" fill="#F4EBDA"/>
+    <g stroke="#123A2C" stroke-width="4" opacity=".8" stroke-linecap="round">
+      <path d="M40 436v-26M96 436v-26M152 436v-26M208 436v-26M264 436v-26M536 436v-26M592 436v-26M648 436v-26M704 436v-26M760 436v-26"/>
+      <path d="M0 410h300M500 410h300"/>
+    </g>
+    <!-- piers -->
+    <rect x="300" y="392" width="26" height="84" rx="3" fill="#EDE1CB"/>
+    <rect x="296" y="384" width="34" height="12" rx="5" fill="#F8F1E2"/>
+    <rect x="474" y="392" width="26" height="84" rx="3" fill="#EDE1CB"/>
+    <rect x="470" y="384" width="34" height="12" rx="5" fill="#F8F1E2"/>
+    <!-- gate leaves -->
+    <g stroke="#123A2C" stroke-width="4.5" opacity=".92" stroke-linecap="round">
+      <path d="M338 470v-62M360 470v-62M382 470v-62M404 470v-62M426 470v-62M448 470v-62M466 470v-62"/>
+      <path d="M330 434h140"/>
+    </g>
+    <rect x="326" y="402" width="148" height="7" rx="3.5" fill="#123A2C"/>
+    <rect x="344" y="394" width="112" height="6" rx="3" fill="#B0854A"/>
+  </g>
+
+  <!-- foreground mango trees -->
+  <g>
+    <rect x="128" y="300" width="15" height="176" rx="6" fill="#7A6248"/>
+    <circle cx="136" cy="286" r="60" fill="#2A5540"/>
+    <circle cx="98" cy="310" r="35" fill="#33654C"/>
+    <circle cx="175" cy="306" r="33" fill="#33654C"/>
+    <g fill="#C9803F" opacity=".9">
+      <circle cx="114" cy="300" r="5"/><circle cx="154" cy="290" r="5"/><circle cx="138" cy="324" r="5"/>
+    </g>
+  </g>
+  <g>
+    <rect x="658" y="300" width="15" height="176" rx="6" fill="#7A6248"/>
+    <circle cx="665" cy="286" r="56" fill="#2A5540"/>
+    <circle cx="628" cy="308" r="33" fill="#33654C"/>
+    <circle cx="702" cy="306" r="31" fill="#33654C"/>
+    <g fill="#C9803F" opacity=".9">
+      <circle cx="646" cy="298" r="5"/><circle cx="682" cy="292" r="5"/><circle cx="666" cy="322" r="5"/>
+    </g>
+  </g>
+
+  <!-- lawn texture -->
+  <g stroke="#93AA8C" stroke-width="3" opacity=".5" stroke-linecap="round">
+    <path d="M30 502h150M0 534h120M610 506h170M640 538h160M190 546h60"/>
+  </g>
+
+  <rect width="800" height="560" fill="url(#fh-vig)"/>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img"
+     aria-label="Illustration of a gated lane of contemporary row houses with private porches and landscaped verges">
+  <title>Gated lane of contemporary row houses</title>
+  <defs>
+    <linearGradient id="vr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1E2CA"/>
+      <stop offset=".62" stop-color="#FAF2E6"/>
+      <stop offset="1" stop-color="#EFF1EA"/>
+    </linearGradient>
+    <linearGradient id="vr-wallA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDFBF6"/><stop offset="1" stop-color="#EFE6D6"/>
+    </linearGradient>
+    <linearGradient id="vr-wallB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4EADA"/><stop offset="1" stop-color="#E3D5BE"/>
+    </linearGradient>
+    <linearGradient id="vr-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123A2C"/><stop offset="1" stop-color="#1E5442"/>
+    </linearGradient>
+    <linearGradient id="vr-lane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCD0BC"/><stop offset="1" stop-color="#C2B49D"/>
+    </linearGradient>
+    <filter id="vr-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#vr-sky)"/>
+  <g fill="#FFFFFF" opacity=".45">
+    <ellipse cx="180" cy="82" rx="130" ry="18"/>
+    <ellipse cx="640" cy="112" rx="120" ry="15"/>
+  </g>
+
+  <!-- tree canopy behind -->
+  <g fill="#8FA88A" opacity=".6">
+    <circle cx="86" cy="212" r="62"/><circle cx="150" cy="228" r="48"/>
+    <circle cx="716" cy="206" r="58"/><circle cx="656" cy="226" r="44"/>
+  </g>
+
+  <rect x="0" y="392" width="800" height="168" fill="#CBD8C4"/>
+
+  <!-- lane in perspective -->
+  <path d="M296 392h208l180 168H116z" fill="url(#vr-lane)"/>
+  <g stroke="#F7F2E7" stroke-width="5" opacity=".6">
+    <path d="M330 400 200 560M400 400v160M470 400l130 160"/>
+  </g>
+
+  <!-- row of houses: repeated units, alternating tones -->
+  <g>
+    <!-- left run -->
+    <g>
+      <rect x="18" y="228" width="132" height="170" rx="5" fill="url(#vr-wallA)"/>
+      <rect x="10" y="218" width="148" height="16" rx="6" fill="#FFFCF6"/>
+      <rect x="40" y="252" width="88" height="52" rx="3" fill="url(#vr-glass)"/>
+      <rect x="40" y="322" width="52" height="76" rx="3" fill="url(#vr-glass)"/>
+      <rect x="102" y="336" width="30" height="62" rx="3" fill="#F6C979"/>
+      <rect x="34" y="300" width="100" height="6" rx="3" fill="#B0854A" opacity=".85"/>
+    </g>
+    <g>
+      <rect x="150" y="240" width="126" height="158" rx="5" fill="url(#vr-wallB)"/>
+      <rect x="142" y="230" width="142" height="16" rx="6" fill="#FFFCF6"/>
+      <rect x="172" y="262" width="82" height="48" rx="3" fill="url(#vr-glass)"/>
+      <rect x="172" y="330" width="46" height="68" rx="3" fill="#F6C979"/>
+      <rect x="228" y="330" width="28" height="68" rx="3" fill="url(#vr-glass)"/>
+      <rect x="166" y="306" width="94" height="6" rx="3" fill="#B0854A" opacity=".85"/>
+    </g>
+    <!-- right run -->
+    <g>
+      <rect x="524" y="240" width="126" height="158" rx="5" fill="url(#vr-wallB)"/>
+      <rect x="516" y="230" width="142" height="16" rx="6" fill="#FFFCF6"/>
+      <rect x="546" y="262" width="82" height="48" rx="3" fill="url(#vr-glass)"/>
+      <rect x="546" y="330" width="46" height="68" rx="3" fill="url(#vr-glass)"/>
+      <rect x="602" y="330" width="28" height="68" rx="3" fill="#F6C979"/>
+      <rect x="540" y="306" width="94" height="6" rx="3" fill="#B0854A" opacity=".85"/>
+    </g>
+    <g>
+      <rect x="650" y="228" width="132" height="170" rx="5" fill="url(#vr-wallA)"/>
+      <rect x="642" y="218" width="148" height="16" rx="6" fill="#FFFCF6"/>
+      <rect x="672" y="252" width="88" height="52" rx="3" fill="url(#vr-glass)"/>
+      <rect x="708" y="322" width="52" height="76" rx="3" fill="url(#vr-glass)"/>
+      <rect x="672" y="336" width="30" height="62" rx="3" fill="#F6C979"/>
+      <rect x="666" y="300" width="100" height="6" rx="3" fill="#B0854A" opacity=".85"/>
+    </g>
+  </g>
+
+  <!-- entry gate arch over lane -->
+  <g>
+    <rect x="286" y="196" width="18" height="200" rx="5" fill="#123A2C"/>
+    <rect x="496" y="196" width="18" height="200" rx="5" fill="#123A2C"/>
+    <rect x="278" y="182" width="244" height="20" rx="8" fill="#123A2C"/>
+    <rect x="292" y="186" width="216" height="6" rx="3" fill="#B0854A"/>
+    <rect x="352" y="206" width="96" height="6" rx="3" fill="#B0854A" opacity=".8"/>
+  </g>
+
+  <!-- soft shadows -->
+  <ellipse cx="150" cy="404" rx="150" ry="14" fill="#93A78D" opacity=".45" filter="url(#vr-soft)"/>
+  <ellipse cx="654" cy="404" rx="150" ry="14" fill="#93A78D" opacity=".45" filter="url(#vr-soft)"/>
+
+  <!-- verge planting -->
+  <g fill="#2F5C46" opacity=".9">
+    <rect x="0" y="398" width="290" height="16" rx="8"/>
+    <rect x="510" y="398" width="290" height="16" rx="8"/>
+    <circle cx="272" cy="404" r="16"/><circle cx="528" cy="404" r="16"/>
+  </g>
+  <g stroke="#9DB396" stroke-width="3" opacity=".5">
+    <path d="M20 462h120M0 496h150M660 462h130M650 498h150"/>
+  </g>
+</svg>

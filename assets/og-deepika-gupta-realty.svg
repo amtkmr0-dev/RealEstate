@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img"
+     aria-label="Social share card: Deepika Gupta Realty, plots, villas and farmhouses in Lucknow">
+  <title>Deepika Gupta Realty share card</title>
+  <defs>
+    <linearGradient id="og-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123A2C"/>
+      <stop offset=".55" stop-color="#16442F"/>
+      <stop offset="1" stop-color="#0E2E24"/>
+    </linearGradient>
+    <linearGradient id="og-gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D9B26E"/>
+      <stop offset="1" stop-color="#B0854A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+
+  <!-- decorative arcs -->
+  <g fill="none" stroke="#B0854A" opacity=".28">
+    <circle cx="1080" cy="120" r="150" stroke-width="2"/>
+    <circle cx="1080" cy="120" r="220" stroke-width="2"/>
+    <circle cx="120" cy="560" r="180" stroke-width="2"/>
+  </g>
+
+  <!-- skyline strip -->
+  <g opacity=".22" fill="#F2E3C9">
+    <rect x="720" y="392" width="120" height="150" rx="6"/>
+    <rect x="856" y="430" width="90" height="112" rx="6"/>
+    <rect x="962" y="360" width="140" height="182" rx="6"/>
+    <path d="M700 392 780 340l60 52z"/>
+  </g>
+
+  <!-- monogram -->
+  <g>
+    <rect x="80" y="72" width="96" height="96" rx="22" fill="#F2E3C9"/>
+    <text x="128" y="137" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+          font-size="44" font-weight="700" fill="#123A2C">DG</text>
+  </g>
+  <text x="200" y="118" font-family="Manrope, system-ui, sans-serif" font-size="30" font-weight="800" fill="#FBF8F3">Deepika Gupta</text>
+  <text x="200" y="152" font-family="Manrope, system-ui, sans-serif" font-size="22" font-weight="600" fill="#C9BFA8" letter-spacing="2">REALTY · LUCKNOW</text>
+
+  <text x="80" y="286" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#FBF8F3">Plot, villa ya farmhouse?</text>
+  <text x="80" y="352" font-family="Manrope, system-ui, sans-serif" font-size="31" font-weight="600" fill="#DCD3C0">Jankipuram Extension · Sitapur Road · Kursi Road</text>
+
+  <rect x="80" y="392" width="330" height="14" rx="7" fill="url(#og-gold)"/>
+
+  <g font-family="Manrope, system-ui, sans-serif">
+    <rect x="80" y="452" width="404" height="76" rx="38" fill="#F2E3C9"/>
+    <text x="282" y="500" text-anchor="middle" font-size="30" font-weight="800" fill="#123A2C">WhatsApp 96484 10410</text>
+    <text x="80" y="576" font-size="21" font-weight="600" fill="#A9A08C">Independent real-estate advisor · Not a portal</text>
+  </g>
+</svg>

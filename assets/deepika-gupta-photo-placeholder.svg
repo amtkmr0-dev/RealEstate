@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img"
+     aria-label="Decorative portrait frame with a neutral silhouette, marked as a placeholder where a photograph of Deepika Gupta will be added">
+  <title>Portrait placeholder frame</title>
+  <defs>
+    <linearGradient id="pf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0E7D6"/>
+      <stop offset="1" stop-color="#E2D6C0"/>
+    </linearGradient>
+    <linearGradient id="pf-sil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B4A38"/>
+      <stop offset="1" stop-color="#123A2C"/>
+    </linearGradient>
+    <clipPath id="pf-clip"><rect x="0" y="0" width="600" height="720" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#pf-clip)">
+    <rect width="600" height="720" fill="url(#pf-bg)"/>
+
+    <!-- soft arch backdrop -->
+    <path d="M300 118c106 0 192 86 192 192v410H108V310c0-106 86-192 192-192z" fill="#FBF6EC" opacity=".85"/>
+    <path d="M300 118c106 0 192 86 192 192v410H108V310c0-106 86-192 192-192z" fill="none" stroke="#B0854A" stroke-width="3" opacity=".55"/>
+
+    <!-- neutral silhouette (decorative, not a real person) -->
+    <g fill="url(#pf-sil)" opacity=".9">
+      <circle cx="300" cy="322" r="92"/>
+      <path d="M300 430c118 0 200 78 214 190l8 100H78l8-100c14-112 96-190 214-190z"/>
+    </g>
+    <!-- dupatta / stole suggestion -->
+    <path d="M204 470c-8 96 22 168 96 250h-96c-52-86-62-172-30-244z" fill="#B0854A" opacity=".45"/>
+
+    <!-- corner rules -->
+    <g stroke="#B0854A" stroke-width="4" fill="none" opacity=".8">
+      <path d="M40 78V40h38M562 78V40h-38"/>
+    </g>
+
+    <!-- label plate -->
+    <g>
+      <rect x="60" y="600" width="480" height="72" rx="20" fill="#123A2C" opacity=".93"/>
+      <text x="300" y="632" text-anchor="middle" font-family="Manrope, system-ui, sans-serif"
+            font-size="21" font-weight="800" fill="#F2E3C9">Photo to replace:</text>
+      <text x="300" y="658" text-anchor="middle" font-family="Manrope, system-ui, sans-serif"
+            font-size="19" font-weight="600" fill="#E6D9BE">Deepika Gupta</text>
+    </g>
+  </g>
+</svg>
