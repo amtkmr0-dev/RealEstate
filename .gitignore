@@ -12,3 +12,8 @@
 # logs / local scratch
 *.log
 .cache/
+
+# Separate project with its own git repo and remote
+# (github.com/amtkmr0-dev/Amitportfolio). Ignored so it is never committed
+# into this repo as a nested repository.
+amit-kumar-portfolio/

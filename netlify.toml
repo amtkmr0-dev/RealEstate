@@ -1,0 +1,30 @@
+# Netlify build configuration — DG Realty Lucknow
+#
+# The site files live in the deepika-gupta-realty/ subfolder of this repo.
+# Publishing that folder makes its contents the root of the deployed site, so:
+#
+#   deepika-gupta-realty/index.html    -> https://dgreality.netlify.app/
+#   deepika-gupta-realty/privacy.html  -> https://dgreality.netlify.app/privacy.html
+#
+# This file overrides the publish directory set in the Netlify UI.
+# There is no build step — the folder is published as-is.
+
+[build]
+  publish = "deepika-gupta-realty"
+
+# Long-cache the fingerprint-free static assets. HTML is left alone so
+# content edits go live on the next deploy without a stale cache.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

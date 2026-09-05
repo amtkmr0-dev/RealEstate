@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Privacy Policy · DG Realty Lucknow</title>
+<meta name="description" content="How DG Realty Lucknow (Deepika Gupta) uses the details you share in a property enquiry — what is collected, why, how to correct or delete it, and how to reach us.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Deepika Gupta">
+<meta name="theme-color" content="#123A2C">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="canonical" href="https://dgreality.netlify.app/privacy.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DG Realty Lucknow">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://dgreality.netlify.app/privacy.html">
+<meta property="og:title" content="Privacy Policy · DG Realty Lucknow">
+<meta property="og:description" content="What we collect from a property enquiry, why we collect it, and how to ask for a correction or deletion.">
+<meta property="og:image" content="https://dgreality.netlify.app/assets/og-deepika-gupta-realty.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon-dg.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon-dg.svg">
+<link rel="mask-icon" href="assets/favicon-dg.svg" color="#123A2C">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+</noscript>
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+  /* ======================================================================
+     privacy.html — page-specific styles.
+     Mobile-first: base rules are the small-screen layout; every media
+     query below is min-width. Colour, spacing, radii and type all come
+     from the tokens in css/styles.css so this page stays in step with
+     the main site.
+     ====================================================================== */
+
+  /* --- page chrome ------------------------------------------------------ */
+  .pp-top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(251, 248, 243, .88);
+    backdrop-filter: saturate(150%) blur(10px);
+    -webkit-backdrop-filter: saturate(150%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .pp-top__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    min-height: var(--header-h);
+    padding-block: var(--s-2);
+  }
+  .pp-top__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: .875rem;
+    color: var(--brand);
+    text-decoration: none;
+    padding: var(--s-2) var(--s-3);
+    border-radius: var(--r-pill);
+    border: 1px solid var(--line-2);
+    background: var(--surface);
+    white-space: nowrap;
+  }
+  .pp-top__back:hover { border-color: var(--accent); color: var(--accent-600); }
+  .pp-top__back .ico { transform: rotate(180deg); }
+
+  /* --- masthead --------------------------------------------------------- */
+  .pp-head {
+    background:
+      radial-gradient(120% 140% at 100% 0%, rgba(176, 133, 74, .22) 0%, transparent 55%),
+      linear-gradient(165deg, var(--brand-700) 0%, var(--brand) 62%, var(--brand-600) 100%);
+    color: var(--bg);
+    padding-block: var(--s-8) var(--s-9);
+  }
+  .pp-head__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .6875rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+    margin-bottom: var(--s-4);
+  }
+  .pp-head__eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .pp-head__title {
+    color: #fff;
+    font-size: clamp(1.9rem, 1.3rem + 3.2vw, 3rem);
+  }
+  .pp-head__intro {
+    margin-top: var(--s-4);
+    max-width: 62ch;
+    color: rgba(251, 248, 243, .82);
+  }
+  .pp-head__updated {
+    margin-top: var(--s-5);
+    font-size: .8125rem;
+    color: rgba(251, 248, 243, .68);
+  }
+
+  /* --- quick summary strip ---------------------------------------------- */
+  .pp-facts {
+    display: grid;
+    gap: var(--s-3);
+    margin-top: var(--s-7);
+  }
+  .pp-fact {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+    padding: var(--s-4);
+    border-radius: var(--r-lg);
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(242, 227, 201, .18);
+  }
+  .pp-fact .ico { flex: none; color: var(--accent); margin-top: 2px; }
+  .pp-fact p { font-size: .875rem; color: rgba(251, 248, 243, .9); }
+  .pp-fact strong { color: #fff; display: block; font-size: .9375rem; }
+
+  /* --- body ------------------------------------------------------------- */
+  .pp-body { padding-block: var(--s-8) var(--s-9); }
+
+  .pp-toc {
+    padding: var(--s-5);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xl);
+    background: var(--surface);
+    box-shadow: var(--sh-1);
+    margin-bottom: var(--s-8);
+  }
+  .pp-toc__h {
+    font-family: var(--font-body);
+    font-size: .6875rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin-bottom: var(--s-3);
+  }
+  .pp-toc__list { display: grid; gap: 2px; counter-reset: toc; }
+  .pp-toc__list a {
+    display: block;
+    padding: var(--s-2) var(--s-2) var(--s-2) 34px;
+    position: relative;
+    border-radius: var(--r-sm);
+    font-size: .9375rem;
+    font-weight: 600;
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .pp-toc__list a::before {
+    counter-increment: toc;
+    content: counter(toc, decimal-leading-zero);
+    position: absolute;
+    left: var(--s-2);
+    font-size: .75rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .pp-toc__list a:hover { background: var(--brand-100); color: var(--brand); }
+
+  .pp-section { margin-bottom: var(--s-8); scroll-margin-top: calc(var(--header-h) + var(--s-4)); }
+  .pp-section__h {
+    display: flex;
+    gap: var(--s-3);
+    align-items: baseline;
+    font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem);
+    color: var(--brand);
+    padding-bottom: var(--s-3);
+    border-bottom: 2px solid var(--line);
+  }
+  .pp-section__n {
+    flex: none;
+    font-family: var(--font-body);
+    font-size: .75rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .06em;
+  }
+  .pp-section > p,
+  .pp-section > ul,
+  .pp-section > dl { margin-top: var(--s-4); }
+  .pp-section p { color: var(--ink-2); }
+
+  /* definition-style list for the "what we collect" table */
+  .pp-data { display: grid; gap: 0; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; background: var(--surface); }
+  .pp-data__row { padding: var(--s-4); border-top: 1px solid var(--line); }
+  .pp-data__row:first-child { border-top: 0; }
+  .pp-data__row:nth-child(odd) { background: var(--surface-2); }
+  .pp-data dt { font-weight: 800; color: var(--ink); font-size: .9375rem; }
+  .pp-data dd { margin: 4px 0 0; color: var(--muted); font-size: .875rem; }
+  .pp-data__tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: var(--r-pill);
+    background: var(--accent-100);
+    /* darker than --accent-600 so 10px uppercase still clears 4.5:1 on --accent-100 */
+    color: #7C5A2E;
+    font-size: .625rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    vertical-align: 2px;
+  }
+
+  /* bulleted list that restores markers (li has list-style:none globally) */
+  .pp-list { display: grid; gap: var(--s-3); }
+  .pp-list li {
+    position: relative;
+    padding-left: 26px;
+    color: var(--ink-2);
+  }
+  .pp-list li::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: .62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* callout */
+  .pp-callout {
+    margin-top: var(--s-5);
+    padding: var(--s-5);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line-2);
+    border-left: 4px solid var(--accent);
+    background: var(--accent-100);
+  }
+  .pp-callout p + p { margin-top: var(--s-3); }
+  .pp-callout strong { color: var(--brand-700); }
+
+  /* contact block */
+  .pp-contact {
+    padding: var(--s-6);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xl);
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    box-shadow: var(--sh-2);
+  }
+  .pp-contact__list { display: grid; gap: var(--s-3); margin-top: var(--s-4); }
+  .pp-contact__list li { display: flex; gap: var(--s-3); align-items: flex-start; }
+  .pp-contact__list .ico { flex: none; color: var(--brand); margin-top: 3px; }
+  /* --muted, not --muted-2: this label is 11px uppercase and needs 4.5:1 */
+  .pp-contact__k { display: block; font-size: .6875rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .pp-contact__v { font-weight: 700; color: var(--ink); }
+  .pp-actions { display: grid; gap: var(--s-3); margin-top: var(--s-6); }
+
+  /* home link */
+  .pp-home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    margin-top: var(--s-8);
+    padding: var(--s-5) var(--s-6);
+    border: 1px dashed var(--line-2);
+    border-radius: var(--r-xl);
+    background: var(--bg-2);
+  }
+  .pp-home p { font-size: .875rem; color: var(--muted); }
+
+  /* slim page footer */
+  .pp-foot {
+    border-top: 1px solid var(--line);
+    background: var(--bg-2);
+    padding-block: var(--s-6);
+  }
+  .pp-foot__inner { display: grid; gap: var(--s-3); }
+  .pp-foot p { font-size: .8125rem; color: var(--muted); }
+  .pp-foot__nav { display: flex; flex-wrap: wrap; gap: var(--s-4); }
+  .pp-foot__nav a { font-size: .8125rem; font-weight: 700; }
+
+  /* --- larger screens --------------------------------------------------- */
+  @media (min-width: 600px) {
+    .pp-facts { grid-template-columns: repeat(2, 1fr); }
+    .pp-actions { grid-template-columns: 1fr 1fr; }
+    .pp-data__row { display: grid; grid-template-columns: 13rem 1fr; gap: var(--s-4); align-items: baseline; }
+    .pp-data dd { margin-top: 0; }
+    .pp-foot__inner { grid-template-columns: 1fr auto; align-items: center; }
+  }
+  @media (min-width: 900px) {
+    .pp-head { padding-block: var(--s-9) var(--s-10); }
+    .pp-facts { grid-template-columns: repeat(3, 1fr); }
+    .pp-body { padding-block: var(--s-9) var(--s-10); }
+  }
+
+  /* respect the same motion preference the main site honours */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#ppMain">Skip to main content</a>
+
+<svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+  <symbol id="i-wa" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.02c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.22.85.86-3.14-.2-.32a8.09 8.09 0 0 1-1.24-4.31c0-4.47 3.64-8.11 8.11-8.11 4.47 0 8.11 3.64 8.11 8.11 0 4.47-3.64 8.11-8.11 8.11Zm4.47-6.07c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.72 4.12 3.72.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.6 2h3a1 1 0 0 1 1 .82l.7 3.6a1 1 0 0 1-.28.9L9.4 8.94a13.3 13.3 0 0 0 5.66 5.66l1.62-1.62a1 1 0 0 1 .9-.28l3.6.7a1 1 0 0 1 .82 1v3A2.6 2.6 0 0 1 19.4 20 17.4 17.4 0 0 1 4 4.6 2.6 2.6 0 0 1 6.6 2Z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 6.5h18v11H3z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m3.6 7 8.4 6 8.4-6"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21.2c4.2-4.1 6.3-7.3 6.3-9.9a6.3 6.3 0 1 0-12.6 0c0 2.6 2.1 5.8 6.3 9.9Z"/>
+    <circle cx="12" cy="11.1" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8l7 2.8v5.6c0 4.3-2.9 8.2-7 10-4.1-1.8-7-5.7-7-10V5.6Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12 2.2 2.2 4.2-4.4"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20.5 12.2c0 3.8-3.8 6.9-8.5 6.9-.9 0-1.8-.1-2.6-.3L4 21l1.4-3.6c-1.5-1.3-2.4-3.1-2.4-5.2 0-3.8 3.8-6.9 8.5-6.9s9 3.1 9 6.9Z"/>
+  </symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 2.8h7.5L19 8.3V21.2H6z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M13.2 3v5.6H19M9 13h6M9 16.6h4.4"/>
+  </symbol>
+</svg>
+
+<!-- ===================== top bar ===================== -->
+<header class="pp-top">
+  <div class="container pp-top__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">DG</span>
+      <span class="brand__text">
+        <strong class="brand__name">DG Realty Lucknow</strong>
+        <span class="brand__sub">Deepika Gupta</span>
+      </span>
+    </a>
+    <a class="pp-top__back" href="index.html">
+      <svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg>Home
+    </a>
+  </div>
+</header>
+
+<main id="ppMain">
+
+  <!-- ===================== masthead ===================== -->
+  <div class="pp-head">
+    <div class="container container--narrow">
+      <p class="pp-head__eyebrow">Privacy</p>
+      <h1 class="pp-head__title">Privacy Policy</h1>
+      <p class="pp-head__intro">
+        This page explains what happens to the details you share when you make a property enquiry with
+        DG Realty Lucknow — what is collected, why it is collected, how you can have it corrected or
+        deleted, and how to reach us.
+      </p>
+      <p class="pp-head__updated">Last updated: 5 September 2026</p>
+
+      <ul class="pp-facts">
+        <li class="pp-fact">
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg>
+          <p><strong>Your details are not sold</strong>They are not sold, rented or traded to anyone.</p>
+        </li>
+        <li class="pp-fact">
+          <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>
+          <p><strong>We reply by phone or WhatsApp</strong>Those are the two channels we use.</p>
+        </li>
+        <li class="pp-fact">
+          <svg class="ico" aria-hidden="true"><use href="#i-doc"></use></svg>
+          <p><strong>Verify property details yourself</strong>Prices, availability and documents must be checked independently.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== body ===================== -->
+  <div class="pp-body">
+    <div class="container container--narrow">
+
+      <nav class="pp-toc" aria-labelledby="ppTocH">
+        <h2 class="pp-toc__h" id="ppTocH">On this page</h2>
+        <ul class="pp-toc__list">
+          <li><a href="#who">Who this policy covers</a></li>
+          <li><a href="#collect">What information we collect</a></li>
+          <li><a href="#why">Why we collect it</a></li>
+          <li><a href="#contact-method">How we contact you</a></li>
+          <li><a href="#not-sold">We do not sell your information</a></li>
+          <li><a href="#retention">How long we keep it</a></li>
+          <li><a href="#rights">Correcting or deleting your information</a></li>
+          <li><a href="#verify">Verifying property information</a></li>
+          <li><a href="#reach-us">Contact details</a></li>
+        </ul>
+      </nav>
+
+      <!-- 1 -->
+      <section class="pp-section" id="who" aria-labelledby="whoH">
+        <h2 class="pp-section__h" id="whoH"><span class="pp-section__n" aria-hidden="true">01</span>Who this policy covers</h2>
+        <p>
+          DG Realty Lucknow is an independent real-estate advisory represented by Deepika Gupta. We help
+          buyers look at residential plots, villas and row houses, and farmhouses in
+          <strong>Jankipuram Extension, Sitapur Road and Kursi Road, Lucknow</strong>.
+        </p>
+        <p>
+          This policy applies to this website and to enquiries that reach us through it — including the
+          enquiry form, the WhatsApp buttons and the call buttons. Where the words “we”, “us” and “our”
+          appear below, they mean DG Realty Lucknow.
+        </p>
+      </section>
+
+      <!-- 2 -->
+      <section class="pp-section" id="collect" aria-labelledby="collectH">
+        <h2 class="pp-section__h" id="collectH"><span class="pp-section__n" aria-hidden="true">02</span>What information we collect</h2>
+        <p>
+          We only ask for what is needed to understand your requirement and get back to you. When you send an
+          enquiry, this is what we collect:
+        </p>
+
+        <dl class="pp-data">
+          <div class="pp-data__row">
+            <dt>Name</dt>
+            <dd>So we know who we are speaking with.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Phone number</dt>
+            <dd>The number we call or message you on. This is usually your WhatsApp number too.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Email address <span class="pp-data__tag">Optional</span></dt>
+            <dd>Only if you choose to give one — for sending details in writing.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Property type</dt>
+            <dd>Whether you are looking at a plot, a villa or row house, or a farmhouse.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Preferred area</dt>
+            <dd>The locality you are interested in, such as Jankipuram Extension, Sitapur Road or Kursi Road.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Budget range</dt>
+            <dd>So that the options we show you are worth your time.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Buying or site-visit timeline</dt>
+            <dd>When you are hoping to visit or to buy, so we can plan around it.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Your message <span class="pp-data__tag">Optional</span></dt>
+            <dd>Anything else you want to tell us about what you are looking for.</dd>
+          </div>
+          <div class="pp-data__row">
+            <dt>Your city <span class="pp-data__tag">Optional</span></dt>
+            <dd>Helpful when you are buying in Lucknow from another city.</dd>
+          </div>
+        </dl>
+
+        <p>
+          Two further things are recorded automatically, and you should know about them:
+        </p>
+        <ul class="pp-list">
+          <li>
+            <strong>Where the enquiry came from.</strong> If you arrived through an advertisement or a shared
+            link, the campaign reference attached to that link is saved along with your enquiry. It tells us
+            which advert you responded to. It does not identify you personally.
+          </li>
+          <li>
+            <strong>A copy saved in your own browser.</strong> Your last enquiry is stored on your own device
+            so the page can fill in your details and prepare your WhatsApp message. It stays on your device,
+            and clearing your browser data removes it.
+          </li>
+        </ul>
+
+        <p>
+          We do not ask for identity documents, PAN or Aadhaar numbers, bank or payment details through this
+          website. <strong>No payments are collected here.</strong>
+        </p>
+      </section>
+
+      <!-- 3 -->
+      <section class="pp-section" id="why" aria-labelledby="whyH">
+        <h2 class="pp-section__h" id="whyH"><span class="pp-section__n" aria-hidden="true">03</span>Why we collect it</h2>
+        <p>Your details are used for three things, and nothing else:</p>
+        <ul class="pp-list">
+          <li><strong>Responding to your property enquiry</strong> — getting back to you about what you asked for.</li>
+          <li><strong>Sharing options that match your requirement</strong> — property type, area and budget together tell us what is worth sending you.</li>
+          <li><strong>Coordinating site visits</strong> — agreeing a date and time, and giving you directions and access details.</li>
+        </ul>
+        <p>
+          We do not add you to a bulk marketing list, and we do not use your details for anything unrelated to
+          the enquiry you made.
+        </p>
+      </section>
+
+      <!-- 4 -->
+      <section class="pp-section" id="contact-method" aria-labelledby="cmH">
+        <h2 class="pp-section__h" id="cmH"><span class="pp-section__n" aria-hidden="true">04</span>How we contact you</h2>
+        <p>
+          We reach out by <strong>phone call and WhatsApp</strong> on the number you give us. WhatsApp is
+          usually fastest. If you have shared an email address, we may also send details in writing to it.
+        </p>
+        <p>
+          Calls are normally made between 10:00 and 19:00 IST. You can tell us at any time to use one channel
+          only, to contact you at a different time, or to stop contacting you altogether — just say so on
+          WhatsApp or on a call, and it will be respected.
+        </p>
+        <p>
+          Messages sent over WhatsApp also pass through WhatsApp itself, which handles them under its own
+          terms and privacy policy.
+        </p>
+      </section>
+
+      <!-- 5 -->
+      <section class="pp-section" id="not-sold" aria-labelledby="nsH">
+        <h2 class="pp-section__h" id="nsH"><span class="pp-section__n" aria-hidden="true">05</span>We do not sell your information</h2>
+        <p>
+          Your details are <strong>never sold, rented, traded or passed to data brokers, lead-buying networks
+          or third-party marketing lists</strong>. We do not exchange enquiry lists with other agents or
+          brokers.
+        </p>
+        <p>
+          The only time your name and phone number would go to anyone else is when it is needed to arrange
+          something you have asked for — for example, giving your name at a site gate so that a visit can go
+          ahead. That is done for that visit alone, and with your agreement. We may also have to disclose
+          information if the law requires it.
+        </p>
+      </section>
+
+      <!-- 6 -->
+      <section class="pp-section" id="retention" aria-labelledby="rtH">
+        <h2 class="pp-section__h" id="rtH"><span class="pp-section__n" aria-hidden="true">06</span>How long we keep it</h2>
+        <p>
+          We keep your enquiry while we are helping you, and for a reasonable period afterwards in case you
+          come back to us about the same requirement. When it is no longer needed, or when you ask us to
+          remove it, it is deleted.
+        </p>
+        <p>
+          The copy saved in your own browser is under your control and is removed when you clear your browser
+          data.
+        </p>
+      </section>
+
+      <!-- 7 -->
+      <section class="pp-section" id="rights" aria-labelledby="rgH">
+        <h2 class="pp-section__h" id="rgH"><span class="pp-section__n" aria-hidden="true">07</span>Correcting or deleting your information</h2>
+        <p>
+          You can ask us at any time to correct something that is wrong, or to delete your details entirely.
+          There is no form to fill in and no charge.
+        </p>
+        <ul class="pp-list">
+          <li>
+            <strong>Send a message on WhatsApp</strong> to
+            <a href="https://wa.me/919648410410" target="_blank" rel="noopener">+91&nbsp;96484&nbsp;10410</a>,
+            <strong>call the same number</strong>, or
+            <strong>email</strong> <a href="mailto:deepikagupta@gmail.com">deepikagupta@gmail.com</a>.
+          </li>
+          <li>
+            <strong>Say what you want done</strong> — “please correct my budget” or “please delete my
+            details”. Sending it from the phone number or email you originally used helps us find your
+            enquiry quickly.
+          </li>
+          <li>
+            <strong>We will action it and confirm</strong>, normally within seven days of receiving the
+            request.
+          </li>
+        </ul>
+        <p>
+          Asking us to delete your details will end any ongoing conversation about a property, since we will
+          no longer have a way to reach you. You are welcome to enquire again later.
+        </p>
+      </section>
+
+      <!-- 8 -->
+      <section class="pp-section" id="verify" aria-labelledby="vfH">
+        <h2 class="pp-section__h" id="vfH"><span class="pp-section__n" aria-hidden="true">08</span>Verifying property information</h2>
+        <p>
+          Anything shown on this website or shared in conversation — availability, prices, plot and built-up
+          sizes, layouts, photographs, maps and approval status — is indicative and can change without notice.
+          It is shared to help you shortlist, not as a formal offer.
+        </p>
+
+        <div class="pp-callout">
+          <p>
+            <strong>Please verify everything independently before you commit money.</strong> Check the title
+            and chain of ownership, the layout and building approvals, encumbrance and tax position, measured
+            area and boundaries, and every document, with your own advocate and with the relevant authorities.
+          </p>
+          <p>
+            Do not rely only on what is presented here. Nothing on this website is a guarantee of returns,
+            appreciation, resale value, loan or approval of any kind, and nothing here forms a contract.
+            No payments are collected on this website.
+          </p>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="pp-section" id="reach-us" aria-labelledby="ruH">
+        <h2 class="pp-section__h" id="ruH"><span class="pp-section__n" aria-hidden="true">09</span>Contact details</h2>
+        <p>For anything about this policy, or about the details we hold on you, please get in touch:</p>
+
+        <div class="pp-contact">
+          <ul class="pp-contact__list">
+            <li>
+              <svg class="ico" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <span>
+                <span class="pp-contact__k">Business</span>
+                <span class="pp-contact__v">DG Realty Lucknow</span> — represented by Deepika Gupta
+              </span>
+            </li>
+            <li>
+              <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <span>
+                <span class="pp-contact__k">Phone</span>
+                <a class="pp-contact__v" href="tel:+919648410410">+91 96484 10410</a>
+              </span>
+            </li>
+            <li>
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"></use></svg>
+              <span>
+                <span class="pp-contact__k">WhatsApp</span>
+                <a class="pp-contact__v" href="https://wa.me/919648410410" target="_blank" rel="noopener">+91 96484 10410</a>
+              </span>
+            </li>
+            <li>
+              <svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <span>
+                <span class="pp-contact__k">Email</span>
+                <a class="pp-contact__v" href="mailto:deepikagupta@gmail.com">deepikagupta@gmail.com</a>
+              </span>
+            </li>
+            <li>
+              <svg class="ico" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <span>
+                <span class="pp-contact__k">Areas covered</span>
+                <span class="pp-contact__v">Jankipuram Extension, Sitapur Road and Kursi Road, Lucknow</span>
+              </span>
+            </li>
+          </ul>
+
+          <div class="pp-actions">
+            <a class="btn btn--primary btn--lg btn--block"
+               href="https://wa.me/919648410410?text=Namaste%20Deepika%20ji%2C%20I%20have%20a%20question%20about%20the%20privacy%20policy%20on%20your%20website."
+               target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"></use></svg>Message on WhatsApp
+            </a>
+            <a class="btn btn--outline btn--lg btn--block" href="tel:+919648410410">
+              <svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>Call 96484 10410
+            </a>
+          </div>
+        </div>
+
+        <p style="margin-top:var(--s-5)">
+          If this policy changes, the updated version will be published on this page with a new date at the
+          top.
+        </p>
+      </section>
+
+      <!-- back to homepage -->
+      <div class="pp-home">
+        <p>Looking for plots, villas or farmhouses in north Lucknow?</p>
+        <a class="btn btn--primary" href="index.html">
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg>Back to the homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ===================== footer ===================== -->
+<footer class="pp-foot">
+  <div class="container container--narrow pp-foot__inner">
+    <p>&copy; 2026 Deepika Gupta · DG Realty Lucknow. Independent real-estate advisor — not a real-estate portal.</p>
+    <nav class="pp-foot__nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="index.html#visit">Book a site visit</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
